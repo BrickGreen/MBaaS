@@ -3,15 +3,20 @@ package com.example.homework7_a;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.homework7_a.model.Task;
+import com.parse.GetCallback;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 
-public class CreateActivity extends ActionBarActivity {
+public class CreateActivity extends AppCompatActivity {
 
     private TextView txtName;
     private TextView txtDescription;

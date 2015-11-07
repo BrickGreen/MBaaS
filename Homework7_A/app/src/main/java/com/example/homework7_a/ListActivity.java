@@ -56,7 +56,9 @@ public class ListActivity extends AppCompatActivity {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Task");
 
         query.findInBackground(new FindCallback<ParseObject>() {
-            public void done(List<ParseObject> taskList, ParseException e) {
+
+            @Override
+            public void done(List<ParseObject> taskList, com.parse.ParseException e) {
                 if (e == null) {
                     for (ParseObject tasks : taskList) {
 
@@ -65,13 +67,14 @@ public class ListActivity extends AppCompatActivity {
                         task.setTaskId(tasks.getObjectId());
                         task.setName(tasks.getString("name"));
 
-                        Log.d("name", task.getName());
+                        Log.d("name",task.getName());
                         adapter.add(task);
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
+
         });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
