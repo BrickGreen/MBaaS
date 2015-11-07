@@ -1,7 +1,7 @@
 package com.example.homework7_a.model;
 
 /**
- * Created by aspendavis on 11/5/15.
+ * Created by brickgreen on 11/5/15.
  */
 public class Task {
 

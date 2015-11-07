@@ -12,7 +12,7 @@ import com.example.homework7_a.R;
 import java.util.ArrayList;
 
 /**
- * Created by aspendavis on 11/5/15.
+ * Created by brickgreen on 11/5/15.
  */
 public class TasksAdapter extends ArrayAdapter<Task> {
     public TasksAdapter(Context context, ArrayList<Task> tasks) {
