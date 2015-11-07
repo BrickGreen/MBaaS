@@ -2,6 +2,7 @@ package com.example.homework7_a;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -9,7 +10,6 @@ import android.view.MenuItem;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -28,16 +28,14 @@ import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
 
-    private Button btnCreate;
     private TasksAdapter adapter;
-    private ArrayList<Task> arrayOfTasks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        btnCreate = (Button) findViewById(R.id.btnCreate);
+        Button btnCreate = (Button) findViewById(R.id.btnCreate);
         btnCreate.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
@@ -48,7 +46,7 @@ public class ListActivity extends AppCompatActivity {
             }
         });
 
-        arrayOfTasks = new ArrayList<Task>();
+        ArrayList<Task> arrayOfTasks = new ArrayList<Task>();
         adapter = new TasksAdapter(this, arrayOfTasks);
         ListView listView = (ListView) findViewById(R.id.lv_task);
         listView.setAdapter(adapter);
